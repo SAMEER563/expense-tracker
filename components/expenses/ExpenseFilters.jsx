@@ -31,8 +31,7 @@ export default function ExpenseFilters({ filters, onFiltersChange }) {
 
   return (
     <div className="bg-white p-4 rounded-2xl shadow-md mb-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-        {/* Search */}4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Search */}
         <div className="lg:col-span-2">
           <Label htmlFor="search" className="text-sm text-gray-600">
@@ -54,17 +53,18 @@ export default function ExpenseFilters({ filters, onFiltersChange }) {
         <div>
           <Label className="text-sm text-gray-600">Event</Label>
           <Select
-            value={filters.event}
-            onValueChange={(val) => handleFilterChange('event', val)}
+            value={filters.event || 'all'}
+            onValueChange={(val) => handleFilterChange('event', val === 'all' ? '' : val)}
           >
             <SelectTrigger className="mt-1">
               <SelectValue placeholder="All Events" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Events</SelectItem>
+              <SelectItem value="all">All Events</SelectItem>
               {EVENTS.map((event) => (
                 <SelectItem key={event.name} value={event.name}>
-                  {event.emoji} {even
+                  {event.emoji} {event.name}
+                </SelectItem>
               ))}
             </SelectContent>
           </Select>
@@ -74,14 +74,14 @@ export default function ExpenseFilters({ filters, onFiltersChange }) {
         <div>
           <Label className="text-sm text-gray-600">Paid By</Label>
           <Select
-            value={filters.paidBy}
-            onValueChange={(val) => handleFilterChange('paidBy', val)}
+            value={filters.paidBy || 'all'}
+            onValueChange={(val) => handleFilterChange('paidBy', val === 'all' ? '' : val)}
           >
             <SelectTrigger className="mt-1">
               <SelectValue placeholder="All Members" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Members</SelectItem>
+              <SelectItem value="all">All Members</SelectItem>
               {DEFAULT_MEMBERS.map((member) => (
                 <SelectItem key={member} value={member}>
                   {member}
