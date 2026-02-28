@@ -80,18 +80,20 @@ export default function Navbar() {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t">
             <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-gold ${
-                    pathname === link.href ? 'text-gold' : 'text-gray-700'
-                  }`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks
+                .filter((link) => link.href !== '/expenses') // Hide Expenses on mobile
+                .map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`text-sm font-medium transition-colors hover:text-gold ${
+                      pathname === link.href ? 'text-gold' : 'text-gray-700'
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
               <div className="pt-2 border-t">
                 <Badge variant="outline" className="bg-rose-light text-rose border-rose">
                   Total: <CurrencyDisplay amount={totalExpense} className="ml-1 font-semibold" />
