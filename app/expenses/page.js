@@ -5,6 +5,7 @@ import ExpenseFilters from '@/components/expenses/ExpenseFilters';
 import ExpenseTable from '@/components/expenses/ExpenseTable';
 import AddExpenseButton from '@/components/shared/AddExpenseButton';
 import LoadingSpinner from '@/components/shared/LoadingSpinner';
+import PdfDownloadDialog from '@/components/expenses/PdfDownloadDialog';
 
 export default function ExpensesPage() {
   const [expenses, setExpenses] = useState([]);
@@ -43,13 +44,16 @@ export default function ExpensesPage() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
       {/* Page Header */}
-      <div className="mb-8">
-        <h1 className="text-3xl md:text-4xl font-heading font-bold text-rose mb-2">
-          All Expenses
-        </h1>
-        <p className="text-gray-600">
-          View, filter, and manage all your wedding expenses
-        </p>
+      <div className="mb-8 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+        <div>
+          <h1 className="text-3xl md:text-4xl font-heading font-bold text-rose mb-2">
+            All Expenses
+          </h1>
+          <p className="text-gray-600">
+            View, filter, and manage all your wedding expenses
+          </p>
+        </div>
+        <PdfDownloadDialog />
       </div>
 
       {/* Filters */}
