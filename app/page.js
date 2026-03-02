@@ -50,7 +50,7 @@ export default function Home() {
       {/* Hero Header */}
       <div className="text-center mb-10">
         <h1 className="text-4xl md:text-5xl font-heading font-bold text-rose mb-3">
-          💍 Wedding Expense Tracker
+          💍 Wedding Expense Tracker 
         </h1>
         <p className="text-gray-600 text-lg">
           Track and manage all your wedding expenses beautifully
