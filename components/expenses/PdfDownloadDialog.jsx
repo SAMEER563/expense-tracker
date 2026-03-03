@@ -106,6 +106,7 @@ const generatePDF = async () => {
       50
     );
 
+    
     // ===== DIVIDER =====
     doc.setDrawColor(201, 168, 76);
     doc.setLineWidth(0.5);
