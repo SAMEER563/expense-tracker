@@ -18,7 +18,6 @@ export default function ExpenseFilters({ filters, onFiltersChange }) {
     onFiltersChange({ ...filters, [key]: value });
   };
   
-
   const handleClearFilters = () => {
     onFiltersChange({
       search: '',
