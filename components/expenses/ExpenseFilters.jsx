@@ -17,6 +17,7 @@ export default function ExpenseFilters({ filters, onFiltersChange }) {
   const handleFilterChange = (key, value) => {
     onFiltersChange({ ...filters, [key]: value });
   };
+  
 
   const handleClearFilters = () => {
     onFiltersChange({
