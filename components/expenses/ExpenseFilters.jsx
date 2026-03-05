@@ -35,7 +35,7 @@ export default function ExpenseFilters({ filters, onFiltersChange }) {
         {/* Search */}
         <div className="lg:col-span-2">
           <Label htmlFor="search" className="text-sm text-gray-600">
-            Search
+            Search 
           </Label>
           <div className="relative mt-1">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
