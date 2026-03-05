@@ -17,6 +17,7 @@ export default function ExpensesPage() {
     paidBy: '',
   });
 
+  
   const fetchExpenses = async () => {
     setLoading(true);
     try {
