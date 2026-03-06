@@ -49,6 +49,7 @@ export default function ExpenseFilters({ filters, onFiltersChange }) {
           </div>
         </div>
 
+
         {/* Event Filter */}
         <div>
           <Label className="text-sm text-gray-600">Event</Label>
